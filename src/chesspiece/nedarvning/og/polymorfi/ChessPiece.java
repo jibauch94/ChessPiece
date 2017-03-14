@@ -23,4 +23,20 @@ public abstract class ChessPiece {
         xPosition = this.xPosition;
         yPosition = this.yPosition;
     }
+    public boolean canMoveTo(int x, int y){
+        if((x >= 1 && x <= 8)&&
+                (y >= 1 && y <= 8)&&
+                (x != xPosition && y != yPosition)){
+        
+        return true;
+        
+    }
+        else{
+            return false;
+        }
+    }
+    public String positionToField(int x, int y){
+        return x > 1 && x < 8 ? String.valueOf((char)(x + 'A' - 1) + "," + y) : null ;
+    }
+    
 }
